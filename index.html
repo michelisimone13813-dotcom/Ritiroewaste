@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritiro E-Waste & Sgombero Elettronica | Servizio Rapido a Domicilio</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --secondary-dark: #059669;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #f1f5f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.85)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200') center/cover;
+            color: white;
+            text-align: center;
+            padding: 90px 20px 80px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: #e2e8f0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--secondary);
+        }
+        .btn-whatsapp:hover {
+            background-color: var(--secondary-dark);
+        }
+
+        .btn-phone {
+            background-color: var(--primary);
+        }
+        .btn-phone:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* --- CONTAINER --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            margin-top: 10px;
+        }
+
+        /* --- SERVICES CARDS --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .card-red .card-icon { background: #fee2e2; color: #ef4444; }
+        .card-green .card-icon { background: #d1fae5; color: #10b981; }
+        .card-orange .card-icon { background: #ffedd5; color: #f97316; }
+
+        .card h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* --- GALLERY SECTION --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            height: 180px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* --- CONTACT FORM & INFO --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-info h3 {
+            font-size: 1.6rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-item i {
+            width: 45px;
+            height: 45px;
+            background: var(--light-gray);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--dark);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #1e293b;
+        }
+
+        /* --- REVIEWS --- */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid var(--light-gray);
+        }
+
+        .stars {
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .review-card p {
+            font-style: italic;
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .author {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        /* --- FAQ --- */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .faq-item h4 {
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-item h4 i {
+            color: var(--primary);
+        }
+
+        .faq-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            padding-left: 24px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--dark);
+            color: #94a3b8;
+            padding: 40px 20px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .contact-wrapper { grid-template-columns: 1fr; padding: 25px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-recycle"></i> Ritiro E-Waste
+            </a>
+            <ul class="nav-links">
+                <li><a href="#servizi">Servizi</a></li>
+                <li><a href="#galleria">Cosa Ritiriamo</a></li>
+                <li><a href="#recensioni">Testimonianze</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <h1>Ritiro & Recupero Elettronica Usata</h1>
+        <p>Hai vecchi computer, telefoni o elettrodomestici da smaltire? Passiamo noi a prenderli direttamente a casa tua!</p>
+        
+        <div class="cta-buttons">
+            <a href="https://wa.me/393518015469?text=Ciao!%20Vorrei%20informazioni%20per%20un%20ritiro%20di%20elettronica." class="btn btn-whatsapp" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp
+            </a>
+            <a href="tel:+393518015469" class="btn btn-phone">
+                <i class="fa-solid fa-phone"></i> Chiama: 351 801 5469
+            </a>
+        </div>
+    </header>
+
+    <!-- SERVIZI -->
+    <section class="container" id="servizi">
+        <div class="section-title">
+            <h2>I Nostri Servizi</h2>
+            <p>Offriamo soluzioni su misura per privati ed aziende</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="card card-red">
+                <div class="card-icon">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                </div>
+                <h3>Ritiro Gratuito E-Waste</h3>
+                <p>Cellulari vecchi, vecchi computer, stampanti, tablet e piccoli elettrodomestici rotti o in disuso. Ritiriamo a domicilio senza alcun costo.</p>
+            </div>
+
+            <div class="card card-green">
+                <div class="card-icon">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+                <h3>Valutazione & Acquisto Usato</h3>
+                <p>Possiedi PC, parti hardware o smartphone recenti o riparabili? Valutiamo il tuo usato e ti offriamo pagamento immediato.</p>
+            </div>
+
+            <div class="card card-orange">
+                <div class="card-icon">
+                    <i class="fa-solid fa-warehouse"></i>
+                </div>
+                <h3>Sgombero Cantine e Garage</h3>
+                <p>Servizio rapido e pulito per lo sgombero completo di materiale elettrico ed elettronico accumulato in locali, soffitte o uffici.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERIA PRODOTTI -->
+    <section class="container" id="galleria" style="padding-top: 0;">
+        <div class="section-title">
+            <h2>Cosa Ritiriamo</h2>
+            <p>Esempi di dispositivi e materiale RAEE recuperabile</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=500" alt="Laptop e Computer">
+                <div class="gallery-overlay">Laptop e PC Fisssi</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=500" alt="Smartphone e Tablet">
+                <div class="gallery-overlay">Smartphone e Tablet</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&q=80&w=500" alt="Componenti Hardware">
+                <div class="gallery-overlay">Schede & Componenti</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&q=80&w=500" alt="Elettronica Varia">
+                <div class="gallery-overlay">Elettrodomestici e Cavi</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIANZE -->
+    <section style="background: var(--light-gray); padding: 60px 0;" id="recensioni">
+        <div class="container" style="padding: 0 20px;">
+            <div class="section-title">
+                <h2>Cosa Dicono di Noi</h2>
+                <p>Le esperienze di chi ha già utilizzato il nostro servizio</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Servizio puntualissimo. Avevo due vecchi tower PC e una stampante rotta in garage, sono venuti a prenderli a casa senza chiedermi un euro!"</p>
+                    <div class="author">- Marco T.</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Gli ho mandato le foto su WhatsApp di un portatile che non usavo più, mi hanno fatto un'offerta e pagato direttamente al momento del ritiro."</p>
+                    <div class="author">- Elena R.</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Sgomberato il garage di mio padre pieno di cavi, vecchie TV e radio rotte. Ragazzi gentili, veloci e molto professionali."</p>
+                    <div class="author">- Giuseppe V.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container" id="faq">
+        <div class="section-title">
+            <h2>Domande Frequenti</h2>
+            <p>Tutto quello che c'è da sapere sul nostro intervento</p>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <h4><i class="fa-solid fa-circle-question"></i> Il ritiro a domicilio è davvero gratuito?</h4>
+                <p>Sì, per l'elettronica da riciclo (E-Waste) il ritiro a domicilio è completamente gratuito nelle zone coperte dal nostro servizio.</p>
+            </div>
+            <div class="faq-item">
+                <h4><i class="fa-solid fa-circle-question"></i> Ritirate anche apparecchi non funzionanti o rotti?</h4>
+                <p>Assolutamente sì! Ci occupiamo del recupero e dello smaltimento corretto anche di oggetti completamente fuori uso.</p>
+            </div>
+            <div class="faq-item">
+                <h4><i class="fa-solid fa-circle-question"></i> Come funziona la valutazione dell'usato?</h4>
+                <p>Inviaci le foto e le specifiche del dispositivo su WhatsApp al 351 801 5469. Ti daremo una stima e, se accetti, ti pagheremo al momento del ritiro.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATTI E FORM -->
+    <section class="container" id="contatti" style="padding-top: 0;">
+        <div class="section-title">
+            <h2>Prenota un Ritiro</h2>
+            <p>Inviaci un messaggio o compila il modulo per essere ricontattato</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Mettiti in contatto</h3>
+                <p>Siamo pronti a ritirare la tua elettronica accumulata. Contattaci per concordare un appuntamento.</p>
+
+                <div class="info-item">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <strong>WhatsApp</strong><br>
+                        <a href="https://wa.me/393518015469" style="color: var(--gray); text-decoration: none;">351 801 5469</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <strong>Telefono</strong><br>
+                        <a href="tel:+393518015469" style="color: var(--gray); text-decoration: none;">351 801 5469</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <strong>Orari di Ritiro</strong><br>
+                        Lunedì - Sabato: 08:00 - 19:00
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORM (Collegato per inviare messaggi via WhatsApp) -->
+            <form onsubmit="event.preventDefault(); sendToWhatsApp();">
+                <div class="form-group">
+                    <label for="nome">Nome e Cognome</label>
+                    <input type="text" id="nome" class="form-control" placeholder="Es. Mario Rossi" required>
+                </div>
+                <div class="form-group">
+                    <label for="citta">Zona / Indirizzo</label>
+                    <input type="text" id="citta" class="form-control" placeholder="Es. Milano Centro" required>
+                </div>
+                <div class="form-group">
+                    <label for="materiale">Cosa devi smaltire/vendere?</label>
+                    <textarea id="materiale" class="form-control" placeholder="Es. 2 vecchi PC portatili, 1 TV rotta e vari cavi..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="fa-brands fa-whatsapp"></i> Invia Richiesta via WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Ritiro E-Waste - Tutti i diritti riservati.</p>
+        <div class="footer-links">
+            <a href="#servizi">Servizi</a> | 
+            <a href="#contatti">Contatti</a> | 
+            <a href="tel:+393518015469">351 801 5469</a>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PER INVIO FORM SU WHATSAPP -->
+    <script>
+        function sendToWhatsApp() {
+            const nome = document.getElementById('nome').value;
+            const citta = document.getElementById('citta').value;
+            const materiale = document.getElementById('materiale').value;
+
+            const text = `Ciao! Mi chiamo *${nome}* (${citta}).%0AVorrei richiedere informazioni per il ritiro di:%0A${materiale}`;
+            window.open(`https://wa.me/393518015469?text=${text}`, '_blank');
+        }
+    </script>
+</body>
+</html>
